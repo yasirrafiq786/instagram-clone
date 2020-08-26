@@ -59,3 +59,4 @@ gem "simple_form"
 gem "semantic-ui-sass"
 gem "cloudinary"
 gem "carrierwave"
+gem "dotenv-rails", groups: [:development, :test]
