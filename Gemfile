@@ -57,6 +57,6 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "simple_form"
 gem "cloudinary"
-gem "carrierwave"
+
 gem "dotenv-rails", groups: [:development, :test]
 gem "devise"
