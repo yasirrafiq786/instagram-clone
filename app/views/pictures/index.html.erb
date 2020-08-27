@@ -1,2 +1,9 @@
 <h3><%= @user.username %></h3>
 <%= link_to "Add New Pictures", new_picture_path %>
+<% @pictures.each do |picture|%>
+  <% picture.photos.each do |photo|%>
+    <div><%= cl_image_tag photo.key, width: 500, height: 500, crop: :fill %></div>
+  <% end%>
+  <%= render partial: 'comments/display_comments', locals:{comments:picture.comments} %>
+  <%= render partial: 'comments/new_comment', locals: {picture: picture, comment: @comment} %>
+<% end%>

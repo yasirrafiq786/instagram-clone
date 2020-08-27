@@ -2,6 +2,8 @@ class PicturesController < ApplicationController
   def index
     @user = current_user
     @pictures = current_user.pictures
+    @comment = Comment.new
+    @comments = Comment.all.order(created_at: :desc)
   end
 
   def show
@@ -17,7 +19,7 @@ class PicturesController < ApplicationController
     @user = current_user
     @picture.user = @user
     if @picture.save
-      redirect_to picture_path(@picture)
+      redirect_to root_path
     else
       flash[:alert] = "Unable to perform operation"
       render "new"

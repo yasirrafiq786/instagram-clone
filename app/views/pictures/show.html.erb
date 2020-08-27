@@ -1,5 +1,5 @@
 <% if !@picture.photos.blank?%>
   <% @picture.photos.each do |photo| %>
-    <div><%= cl_image_tag photo.key, width: 400, height: 300, crop: :fill %></div>
+    <div><%= cl_image_tag photo.key, width: 500, height: 500, crop: :fill %></div>
   <% end %>
 <% end%>

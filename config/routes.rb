@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   root to: "pictures#index"
 
-  resources :pictures, except: :index
+  resources :pictures, except: :index do
+    resources :comments, only: [:create, :edit, :update, :delete]
+  end
 end

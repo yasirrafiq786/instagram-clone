@@ -1,0 +1,6 @@
+<% comments.each do |comment|%>
+  <div>
+    <%= comment.user.username %> - <%= comment.comment %>
+    <%= link_to 'Edit Comment', edit_picture_comment_path(comment.picture, comment) %>
+  </div>
+<% end%>
