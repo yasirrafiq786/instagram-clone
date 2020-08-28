@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :set_comment, only: [:edit, :update, :destroy]
+
   def create
     @comment = Comment.new(comment_params)
     @picture = Picture.find(params[:picture_id])
@@ -14,13 +16,9 @@ class CommentsController < ApplicationController
     end
   end
 
-  def edit
-    @comment = Comment.find(params[:id])
-    @picture = Picture.find(params[:picture_id])
-  end
+  def edit; end
 
   def update
-    @comment = Comment.find(params[:id])
     if @comment.update(comment_params)
       flash[:notice] = "Comment updated"
       redirect_to root_path
@@ -29,9 +27,22 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    if @comment.destroy
+      flash[:notice] = "Succesfully Deleted"
+      redirect_to root_path
+    else
+      flash[:alert] = "Unable to Delete"
+    end
+  end
+
   private
 
   def comment_params
     params.require(:comment).permit(:comment)
+  end
+
+  def set_comment
+    @comment = Comment.find(params[:id])
   end
 end
