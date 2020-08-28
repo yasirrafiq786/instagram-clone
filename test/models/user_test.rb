@@ -5,8 +5,4 @@ class UserTest < ActiveSupport::TestCase
   #   assert true
   # end
 
-  test "Should not create user without email" do
-    user = User.new(username: "test", email: "", password: "123abc")
-    assert_not user.save, "Saved the user without email"
-  end
 end

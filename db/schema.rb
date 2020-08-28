@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(version: 2020_08_27_073624) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "album"
     t.index ["user_id"], name: "index_pictures_on_user_id"
   end
 
