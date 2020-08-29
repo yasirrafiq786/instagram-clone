@@ -1,4 +1,4 @@
-<h3>Hi! <%= @user.username.capitalize %></h3>
+<h3>Hi! <%= @user.username %></h3>
 <%= link_to "Add New Pictures", new_picture_path %>
 <% @pictures.each do |picture|%>
   <% picture.photos.each do |photo|%>

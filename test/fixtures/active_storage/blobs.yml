@@ -1,0 +1,17 @@
+virus_picture_blob:
+  id: 1
+  key: xo4lb75lwwyo07ilrgkupb8x0m9n
+  filename: virus.jpg
+  content_type: image/jpeg
+  metadata: '{"identified" = true, "analyzed":true}'
+  byte_size: <%= File.size('tmp/storage/xo/41/xo4lb75lwwyo07ilrgkupb8x0m9n/virus.jpg') %>
+  checksum: <%= Digest::MD5.file('tmp/storage/xo/41/xo4lb75lwwyo07ilrgkupb8x0m9n/virus.jpg').base64digest %>
+
+gecko_picture_blob:
+  id: 2
+  key: 1619iqd66ccu0zi0k28np4c2pjmi
+  filename: gecko.jpg
+  content_type: image/jpeg
+  metadata: '{"identified" = true, "analyzed":true}'
+  byte_size: <%= File.size('tmp/storage/16/19/1619iqd66ccu0zi0k28np4c2pjmi/gecko.jpg') %>
+  checksum: <%= Digest::MD5.file('tmp/storage/16/19/1619iqd66ccu0zi0k28np4c2pjmi/gecko.jpg').base64digest %>

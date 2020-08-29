@@ -1,0 +1,15 @@
+virus_picture:
+  name: photos
+  record: one
+  blob: virus_picture_blob
+  record_type: 'Picture'
+  record_id: 1
+  blob_id: 1
+
+gecko_picture:
+  name: photos
+  record: two
+  blob: gecko_picture_blob
+  record_type: 'Picture'
+  record_id: 1
+  blob_id: 2
