@@ -4,16 +4,8 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @picture = Picture.find(params[:picture_id])
-    @user = current_user
-    @comment.user = @user
-    @comment.picture = @picture
-    if @comment.save
-      flash[:notice] = "Comment succesfully created"
-      redirect_to root_path
-    else
-      flash[:alert] = "Unable to make new comment"
-      redirect_to root_path
-    end
+    comment_assignments
+    create_comment
   end
 
   def edit; end
@@ -44,5 +36,21 @@ class CommentsController < ApplicationController
 
   def set_comment
     @comment = Comment.find(params[:id])
+  end
+
+  def create_comment
+    if @comment.save
+      flash[:notice] = "Comment succesfully created"
+      redirect_to root_path
+    else
+      flash[:alert] = "Unable to make new comment"
+      redirect_to root_path
+    end
+  end
+
+  def comment_assignments
+    @user = current_user
+    @comment.user = @user
+    @comment.picture = @picture
   end
 end
